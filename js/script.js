@@ -10,17 +10,11 @@ function Book(name, author, pages, status) {
 }
 const btnNewBook = document.querySelector('#newbook');
 const btn = document.querySelector('#add-book');
-const div = document.querySelector('#books-div');
-//const removeBook = document.querySelector('#remove-book');
+const booksDiv = document.querySelector('#books-div');
 
 
 btn.addEventListener('click', addBook);
 btnNewBook.addEventListener('click', showNewBook);
-//removeBook.addEventListener('click', removeBook);
-
-function removeBook(book){
-    console.log(book);
-}
 
 function showNewBook(){
     //document.querySelector('#book-form').visible = true;
@@ -28,17 +22,28 @@ function showNewBook(){
 
 function render(arr, elem) {
     elem.innerHTML = '';
+    // console.log(arr);
+    
     arr.forEach(book => {
         elem.innerHTML += `<h3 class="title">Name: ${book.name}</h3> 
                             <h4 class="title">Author: ${book.author}</h4>
                             <h4 class="title">Pages: ${book.pages}</h4>
                             <h4 class="title">Status: ${book.status}</h4>
-                            <button id="remove-book" onclick="removeBook(elem)">Remove</button>`;
+                            <button id="change-status" onclick="changeStatus(${arr.indexOf(book)}, myLibrary)">Change status</button>
+                            <button id="remove-book" onclick="removeBook(${arr.indexOf(book)}, myLibrary)">Remove</button>`;
+                            console.log(arr.length);
     });
 }
 
-function removeBook(){
-    console.log("remove");
+function changeStatus(index, arr) { 
+    arr[index].status === 'Read' ? arr[index].status = 'Not Read' : arr[index].status = 'Read';
+    render(myLibrary, booksDiv);
+}
+
+function removeBook(index, arr){
+    arr.splice(index, 1);
+    render(myLibrary, booksDiv);
+    console.log(arr.length);
 }
 
 function addBook() {
@@ -51,7 +56,5 @@ function addBook() {
     
 
     myLibrary.push( new Book(name, author, pages, status));
-    console.log(myLibrary);
-    console.log(render(myLibrary, div));
-    console.log(status);
+    render(myLibrary, booksDiv);
 }
