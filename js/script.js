@@ -11,27 +11,31 @@ function Book(name, author, pages, status) {
 const btnNewBook = document.querySelector('#newbook');
 const btn = document.querySelector('#add-book');
 const booksDiv = document.querySelector('#books-div');
+const bookForm = document.querySelector('#book-form');
+
 
 
 btn.addEventListener('click', addBook);
 btnNewBook.addEventListener('click', showNewBook);
 
 function showNewBook(){
-    //document.querySelector('#book-form').visible = true;
+    bookForm.classList.remove('hidden');
 } 
 
 function render(arr, elem) {
     elem.innerHTML = '';
     // console.log(arr);
-    
+    elem.classList.add('row');
     arr.forEach(book => {
-        elem.innerHTML += `<h3 class="title">Name: ${book.name}</h3> 
-                            <h4 class="title">Author: ${book.author}</h4>
-                            <h4 class="title">Pages: ${book.pages}</h4>
-                            <h4 class="title">Status: ${book.status}</h4>
-                            <button id="change-status" onclick="changeStatus(${arr.indexOf(book)}, myLibrary)">Change status</button>
-                            <button id="remove-book" onclick="removeBook(${arr.indexOf(book)}, myLibrary)">Remove</button>`;
-                            console.log(arr.length);
+        elem.innerHTML += `     <p class="form-content">${book.name}</p>
+                                <p class="form-content">${book.author}</p>
+                                <p class="form-content">${book.pages}</p>
+                                
+
+                                <button class="ui button" id="change-status" onclick="changeStatus(${arr.indexOf(book)}, myLibrary)">${book.status}</button>
+
+                                <button class="ui button" id="remove-book" onclick="removeBook(${arr.indexOf(book)}, myLibrary)">X</button>
+                        `;
     });
 }
 
@@ -50,11 +54,15 @@ function addBook() {
     const name = document.querySelector('#book-name').value;
     const author = document.querySelector('#book-author').value;
     const pages = document.querySelector('#book-pages').value;
-    const status = document.querySelector('input[name="book-status"]:checked').value;
-
-    if (!name && !author && !pages && !status) return alert("Please enter all book details");
+    const status = document.querySelector('input[name="book-status"]');
+    
+    status.checked ? status.value = "Read" : status.value = "Not Read";
+  
+    if (!name && !author && !pages) return alert("Please enter all book details");
     
 
-    myLibrary.push( new Book(name, author, pages, status));
+    myLibrary.push( new Book(name, author, pages, status.value));
     render(myLibrary, booksDiv);
+    bookForm.classList.add('hidden');
+
 }

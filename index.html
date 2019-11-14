@@ -12,23 +12,38 @@
     
     <h1>The Library Project</h1>
 
-    <button id="newbook">New Book</button>
+    <main class="container">
+        <button id="newbook" class="ui secondary button">New Book</button>
 
-    <div class="books" id="books-div"></div>
+        <div class="row">
+            <h3 class="form-titles">Title</h3>
+            <h3 class="form-titles">Author</h3>
+            <h3 class="form-titles">Pages</h3>
+            <h3 class="form-titles">Status</h3>
+            <h3 class="form-titles">Remove</h3>
+        </div>
+        <div id="books-div"></div>
 
-    <div id="book-form" visible="false">
-        <h4>New Book</h4>
-        <input placeholder="Name" type="text" id="book-name">
-        <input placeholder="Author" type="text" id="book-author">
-        <input placeholder="Pages" type="text" id="book-pages">
+        <div id="book-form" class="ui form hidden">
+            <div class="field">
+                <input placeholder="Name" type="text" id="book-name">
+            </div>
 
-        Read
-        <input type="radio" name="book-status" class="book-status" value="Read" >
-        not read
-        <input type="radio" name="book-status" class="book-status" value="Not Read" checked >
-        <button id="add-book" class="ui secondary button">Add</button>
-    </div>
-    
+            <div class="field">
+                <input placeholder="Author" type="text" id="book-author">
+            </div>
+            <div class="field">
+                <input placeholder="Pages" type="text" id="book-pages">
+            </div>
+
+            <div class="ui toggle checkbox">
+                <input type="checkbox" name="book-status" value="Read" checked>
+                <label>Read/Not Read</label>
+            </div>
+
+            <button id="add-book" class="ui button">Add</button>
+        </div>
+    </main>        
 
     <script
     src="https://code.jquery.com/jquery-3.1.1.min.js"

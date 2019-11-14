@@ -1,0 +1,21 @@
+.container {
+    max-width: 60%;
+    margin: 5rem auto;
+}
+
+.row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid black;
+    margin: 2rem 0;
+}
+
+.form-titles {
+    margin: 0;
+    padding: 1rem;
+}
+
+.hidden {
+    display: none;
+}
