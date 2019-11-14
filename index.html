@@ -11,10 +11,23 @@
     
     <h1>The Library Project</h1>
 
-        <input type="text" id="book-input">
-        <button id="add-book">Add</button>
+    <button id="newbook">New Book</button>
 
-        <div class="books" id="books-div"></div>
+    <div class="books" id="books-div"></div>
+
+    <div id="book-form" visible="false">
+        <h4>New Book</h4>
+        <input placeholder="Name" type="text" id="book-name">
+        <input placeholder="Author" type="text" id="book-author">
+        <input placeholder="Pages" type="text" id="book-pages">
+
+        Read
+        <input type="radio" name="book-status" class="book-status" value="Read" >
+        not read
+        <input type="radio" name="book-status" class="book-status" value="Not Read" checked >
+        <button id="add-book">Add</button>
+    </div>
+    
 
     <script src="script.js"></script>
 </body>
