@@ -21,7 +21,7 @@ function showNewBook() {
 
   background.classList.remove('hiddenbg');
   background.classList.add('showbg');
-} 
+}
 
 function hideNewBook() {
   bookForm.classList.remove('show');
@@ -35,28 +35,32 @@ function render(arr, elem) {
   elem.innerHTML = '';
 
   arr.forEach((book) => {
-      elem.innerHTML += `<tr> 
-                            <td> 
-                                <p class=" form-content">${book.name}</p>  
-                            </td>
-                            <td> 
-                                <p class="form-content">${book.author}</p> 
-                            </td>
-                            <td> 
-                                <p class="form-content">${book.pages}</p>  
-                            </td>
-                            <td>                   
-                                <button class="form-content ui button" id="change-status" onclick="changeStatus(${arr.indexOf(book)}, myLibrary)">${book.status}</button> 
-                            </td>
-                            <td>
-                                <button class="form-content ui button" id="remove-book" onclick="removeBook(${arr.indexOf(book)}, myLibrary)">X</button>
-                            </td>
-                          </tr>`;
-                        });
+    elem.innerHTML += `<tr> 
+                          <td> 
+                              <p class=" form-content">${book.name}</p>  
+                          </td>
+                          <td> 
+                              <p class="form-content">${book.author}</p> 
+                          </td>
+                          <td> 
+                              <p class="form-content">${book.pages}</p>  
+                          </td>
+                          <td>                   
+                              <button class="form-content ui button" id="change-status" onclick="changeStatus(${arr.indexOf(book)}, myLibrary)">${book.status}</button> 
+                          </td>
+                          <td>
+                              <button class="form-content ui button" id="remove-book" onclick="removeBook(${arr.indexOf(book)}, myLibrary)">X</button>
+                          </td>
+                        </tr>`;
+  });
 }
 
 function changeStatus(index, arr) {
-  arr[index].status === 'Read' ? arr[index].status = 'Not Read' : arr[index].status = 'Read';
+  if (arr[index].status === 'Read') {
+    arr[index].status = 'Not Read';
+  } else {
+    arr[index].status = 'Read';
+  }
   render(myLibrary, booksDiv);
 }
 
@@ -71,15 +75,19 @@ function addBook() {
   const pages = document.querySelector('#book-pages').value;
   const status = document.querySelector('input[name="book-status"]');
 
-  status.checked ? status.value = "Read" : status.value = "Not Read";
+  if (status.checked) {
+    status.value = 'Read';
+  } else {
+    status.value = 'Not Read';
+  }
 
-  if (!name && !author && !pages) return alert("Please enter all book details");
+  if (!name&&!author&&!pages) return window.alert('Please enter all book details');
 
 
   myLibrary.push( new Book(name, author, pages, status.value));
   render(myLibrary, booksDiv);
 
-  hideNewBook();
+  return hideNewBook();
 }
 
 btn.addEventListener('click', addBook);

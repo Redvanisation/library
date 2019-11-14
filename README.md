@@ -1,4 +1,4 @@
-# library
+# The Library
 
 ## About The Project
 
