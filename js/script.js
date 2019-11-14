@@ -25,17 +25,26 @@ function showNewBook(){
 function render(arr, elem) {
     elem.innerHTML = '';
     // console.log(arr);
-    elem.classList.add('row');
+    //elem.classList.add('row');
     arr.forEach(book => {
-        elem.innerHTML += `     <p class="form-content">${book.name}</p>
-                                <p class="form-content">${book.author}</p>
-                                <p class="form-content">${book.pages}</p>
-                                
-
-                                <button class="ui button" id="change-status" onclick="changeStatus(${arr.indexOf(book)}, myLibrary)">${book.status}</button>
-
-                                <button class="ui button" id="remove-book" onclick="removeBook(${arr.indexOf(book)}, myLibrary)">X</button>
-                        `;
+        elem.innerHTML += `   
+            <tr> 
+                <td> 
+                    <p class=" form-content">${book.name}</p>  
+                </td>
+                <td> 
+                    <p class="form-content">${book.author}</p> 
+                </td>
+                <td> 
+                    <p class="form-content">${book.pages}</p>  
+                </td>
+                <td>                   
+                    <button class="form-content ui button" id="change-status" onclick="changeStatus(${arr.indexOf(book)}, myLibrary)">${book.status}</button> 
+                </td>
+                <td>
+                    <button class="form-content ui button" id="remove-book" onclick="removeBook(${arr.indexOf(book)}, myLibrary)">X</button>
+                </td>
+            </tr>`;
     });
 }
 

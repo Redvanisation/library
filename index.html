@@ -15,15 +15,19 @@
     <main class="container">
         <button id="newbook" class="ui secondary button">New Book</button>
 
-        <div class="row">
-            <h3 class="form-titles">Title</h3>
-            <h3 class="form-titles">Author</h3>
-            <h3 class="form-titles">Pages</h3>
-            <h3 class="form-titles">Status</h3>
-            <h3 class="form-titles">Remove</h3>
-        </div>
-        <div id="books-div"></div>
-
+        <table class="ui celled table">
+            <thead>
+                <tr>
+                    <th class="form-titles">Title</th>
+                    <th class="form-titles">Author</th>
+                    <th class="form-titles">Pages</th>
+                    <th class="form-titles">Status</th>
+                    <th class="form-titles">Remove</th>
+                </tr>
+            </thead>
+            <tbody id="books-div"></tbody>
+        </table>
+        
         <div id="book-form" class="ui form hidden">
             <div class="field">
                 <input placeholder="Name" type="text" id="book-name">
