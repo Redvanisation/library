@@ -10,22 +10,38 @@ function Book(name, author, pages, status) {
 }
 const btnNewBook = document.querySelector('#newbook');
 const btn = document.querySelector('#add-book');
+const cancel = document.querySelector('#cancel-book');
 const booksDiv = document.querySelector('#books-div');
 const bookForm = document.querySelector('#book-form');
+const background = document.querySelector('.form-background');
 
 
 
 btn.addEventListener('click', addBook);
+cancel.addEventListener('click', hideNewBook);
+
 btnNewBook.addEventListener('click', showNewBook);
+background.addEventListener('click', hideNewBook);
 
 function showNewBook(){
     bookForm.classList.remove('hidden');
+    bookForm.classList.add('show');
+
+    background.classList.remove('hiddenbg');
+    background.classList.add('showbg');
 } 
+
+function hideNewBook() {
+    bookForm.classList.remove('show');
+    bookForm.classList.add('hidden');
+
+    background.classList.remove('showbg');
+    background.classList.add('hiddenbg');
+}
 
 function render(arr, elem) {
     elem.innerHTML = '';
-    // console.log(arr);
-    //elem.classList.add('row');
+
     arr.forEach(book => {
         elem.innerHTML += `   
             <tr> 
@@ -72,6 +88,7 @@ function addBook() {
 
     myLibrary.push( new Book(name, author, pages, status.value));
     render(myLibrary, booksDiv);
-    bookForm.classList.add('hidden');
+
+    hideNewBook();
 
 }

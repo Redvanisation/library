@@ -9,11 +9,15 @@
     <link rel="stylesheet" href="style/style.css">
 </head>
 <body>
-    
-    <h1>The Library Project</h1>
+    <div class="form-background hiddenbg"></div>
+
+    <header class="header">
+        <h1 class="title">The Library Project</h1>
+    </header>
 
     <main class="container">
         <button id="newbook" class="ui secondary button">New Book</button>
+        <h2>Books list</h2>
 
         <table class="ui celled table">
             <thead>
@@ -29,24 +33,24 @@
         </table>
         
         <div id="book-form" class="ui form hidden">
+            <h2>Add book</h2>
             <div class="field">
                 <input placeholder="Name" type="text" id="book-name">
             </div>
-
             <div class="field">
                 <input placeholder="Author" type="text" id="book-author">
             </div>
             <div class="field">
                 <input placeholder="Pages" type="text" id="book-pages">
             </div>
-
             <div class="ui toggle checkbox">
                 <input type="checkbox" name="book-status" value="Read" checked>
                 <label>Read/Not Read</label>
             </div>
-
-            <button id="add-book" class="ui button">Add</button>
+            <button id="add-book" class="ui button secondary add">Add</button>
+            <button id="cancel-book" class="ui button add">Cancel</button>
         </div>
+
     </main>        
 
     <script

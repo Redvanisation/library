@@ -1,23 +1,69 @@
+.header {
+    background: linear-gradient(to right, rgba(0,0,0,.8) 60%, rgba(120,120,120,1));
+    height: 120px;
+    padding: 3rem;
+}
+
+.title {
+    color: #fff;
+}
+
 .container {
     max-width: 60%;
     margin: 5rem auto;
+    position: relative;
 }
 
-.row {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border: 1px solid black;
-    margin: 2rem 0;
-}
-.column {
-
-}
-.form-titles {
-    margin: 0;
-    padding: 1rem;
+.table {
+    position: relative;
+    z-index: 90;
 }
 
 .hidden {
+    transform: translate(25%, 0);
+    opacity: 0;
+    transition: .1s;
+    width: 0;
+    height: 0;
+    position: fixed;
+}
+
+.hiddenbg {
     display: none;
+}
+
+.showbg {
+    display: block;
+}
+
+.show {
+    position: fixed !important;
+    top: 30%;
+    left: 50%;
+    width: 50%;
+    transform: translate(-50%, 0);
+    opacity: 1;
+    transition: .5s;
+    background-color: white;
+    padding: 3rem;
+    z-index: 1000;
+}
+
+
+.checkbox {
+    display: block;
+    width: 100%;
+    margin: 2rem 0;
+}
+
+.add {
+    display: inline-block;
+}
+
+.form-background {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    z-index: 999;
+    background-color: rgba(0,0,0,.5);
 }
