@@ -16,9 +16,6 @@ More details: https://www.theodinproject.com/courses/javascript/lessons/library
 
 To get a local copy up and running follow these simple steps.
 
-### Prerequisites
-
-Nothing
 
 ### Installation
  
@@ -28,8 +25,8 @@ Nothing
 
 ## Authors
 
-[Anthony Tapia](https://github.com/AnthonyTC89)
-[Radouane Khiri](https://github.com/Redvanisation)
+* [Anthony Tapia](https://github.com/AnthonyTC89)
+* [Radouane Khiri](https://github.com/Redvanisation)
 
 
 ## Contributing
