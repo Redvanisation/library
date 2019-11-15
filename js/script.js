@@ -86,7 +86,7 @@ function addBook() {
   }
 
   if (!name || !author || !pages) {
-    return window.alert('Please enter all book details');
+    return customAlert('Please enter all book details');
   }
 
   myLibrary.push(new Book(name, author, pages, status.value));
@@ -94,6 +94,11 @@ function addBook() {
 
   return hideNewBook();
 }
+
+function customAlert(msg){
+  return window.alert(msg);
+}
+
 
 btn.addEventListener('click', addBook);
 cancel.addEventListener('click', hideNewBook);
