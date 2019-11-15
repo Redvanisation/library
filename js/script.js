@@ -1,6 +1,6 @@
 /* eslint no-undef: "error" */
 /* eslint-env browser */
-/* eslint no-unused-vars: ["error", { "varsIgnorePattern": "changeStatus" }] */
+/* eslint no-unused-vars: ["error", { "varsIgnorePattern": ["changeStatus","removeBook"] }] */
 
 const myLibrary = [];
 
