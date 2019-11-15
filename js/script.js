@@ -18,6 +18,9 @@ const booksDiv = document.querySelector('#books-div');
 const bookForm = document.querySelector('#book-form');
 const background = document.querySelector('.form-background');
 
+function customAlert(msg){
+  return window.alert(msg);
+}
 
 function showNewBook() {
   bookForm.classList.remove('hidden');
@@ -94,11 +97,6 @@ function addBook() {
 
   return hideNewBook();
 }
-
-function customAlert(msg){
-  return window.alert(msg);
-}
-
 
 btn.addEventListener('click', addBook);
 cancel.addEventListener('click', hideNewBook);
