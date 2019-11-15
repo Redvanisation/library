@@ -35,23 +35,24 @@ function render(arr, elem) {
   elem.innerHTML = '';
 
   arr.forEach((book) => {
-    elem.innerHTML += `<tr> 
-                          <td> 
-                              <p class=" form-content">${book.name}</p>  
-                          </td>
-                          <td> 
-                              <p class="form-content">${book.author}</p> 
-                          </td>
-                          <td> 
-                              <p class="form-content">${book.pages}</p>  
-                          </td>
-                          <td>                   
-                              <button class="form-content ui button" id="change-status" onclick="changeStatus(${arr.indexOf(book)}, myLibrary)">${book.status}</button> 
-                          </td>
-                          <td>
-                              <button class="form-content ui button" id="remove-book" onclick="removeBook(${arr.indexOf(book)}, myLibrary)">X</button>
-                          </td>
-                        </tr>`;
+    elem.innerHTML += 
+    ` <tr> 
+        <td> 
+            <p class=" form-content">${book.name}</p>  
+        </td>
+        <td> 
+            <p class="form-content">${book.author}</p> 
+        </td>
+        <td> 
+            <p class="form-content">${book.pages}</p>  
+        </td>
+        <td>                   
+            <button class="form-content ui button" id="change-status" onclick="changeStatus(${arr.indexOf(book)}, myLibrary)">${book.status}</button> 
+        </td>
+        <td>
+            <button class="form-content ui button" id="remove-book" onclick="removeBook(${arr.indexOf(book)}, myLibrary)">X</button>
+        </td>
+      </tr>`;
   });
 }
 
