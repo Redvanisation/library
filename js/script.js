@@ -1,7 +1,7 @@
 /* eslint no-undef: "error" */
 /* eslint-env browser */
 /* eslint no-unused-vars: ["error", { "varsIgnorePattern": "changeStatus||removeBook" }] */
-
+/* eslint no-alert: "error" */
 const myLibrary = [];
 
 function Book(name, author, pages, status) {
@@ -18,7 +18,7 @@ const booksDiv = document.querySelector('#books-div');
 const bookForm = document.querySelector('#book-form');
 const background = document.querySelector('.form-background');
 
-function customAlert(msg){
+function customAlert(msg) {
   return window.alert(msg);
 }
 
