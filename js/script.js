@@ -85,10 +85,9 @@ function addBook() {
     status.value = 'Not Read';
   }
 
-  if (!name || !author || !pages){
+  if (!name || !author || !pages) {
     return window.alert('Please enter all book details');
   } 
-
 
   myLibrary.push(new Book(name, author, pages, status.value));
   render(myLibrary, booksDiv);
