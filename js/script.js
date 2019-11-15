@@ -1,5 +1,5 @@
-/*eslint no-undef: "error"*/
-/*eslint-env browser*/
+/* eslint no-undef: "error" */
+/* eslint-env browser */
 
 const myLibrary = [];
 
