@@ -19,7 +19,7 @@ const bookForm = document.querySelector('#book-form');
 const background = document.querySelector('.form-background');
 
 function customAlert(msg) {
-  return window.alert(msg);
+  return window.alert(msg); // eslint-disable-line no-alert
 }
 
 function showNewBook() {
