@@ -56,7 +56,6 @@ function render(arr, elem) {
                               <button class="form-content ui button" id="remove-book" onclick="removeBook(${arr.indexOf(book)}, myLibrary)">X</button>
                           </td>
                         </tr>`;
-    
   });
 }
 
@@ -86,7 +85,9 @@ function addBook() {
     status.value = 'Not Read';
   }
 
-  if (!name && !author && !pages) return window.alert('Please enter all book details');
+  if (!name || !author || !pages){
+    return window.alert('Please enter all book details');
+  } 
 
 
   myLibrary.push(new Book(name, author, pages, status.value));
