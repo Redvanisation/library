@@ -1,3 +1,6 @@
+/*eslint no-undef: "error"*/
+/*eslint-env browser*/
+
 const myLibrary = [];
 
 function Book(name, author, pages, status) {
