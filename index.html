@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>The Library</title>
+    <link rel="stylesheet" type="text/css" href="style/semantic.min.css">
+    <link rel="stylesheet" href="style/style.css">
+</head>
+<body>
+    <div class="form-background hiddenbg"></div>
+
+    <header class="header">
+        <h1 class="title">The Library Project</h1>
+    </header>
+
+    <main class="container">
+        <button id="newbook" class="ui secondary button">New Book</button>
+        <h2>Books list</h2>
+
+        <table class="ui celled table">
+            <thead>
+                <tr>
+                    <th class="form-titles">Title</th>
+                    <th class="form-titles">Author</th>
+                    <th class="form-titles">Pages</th>
+                    <th class="form-titles">Status</th>
+                    <th class="form-titles">Remove</th>
+                </tr>
+            </thead>
+            <tbody id="books-div"></tbody>
+        </table>
+        
+        <div id="book-form" class="ui form hidden">
+            <h2>Add book</h2>
+            <div class="field">
+                <input placeholder="Name" type="text" id="book-name">
+            </div>
+            <div class="field">
+                <input placeholder="Author" type="text" id="book-author">
+            </div>
+            <div class="field">
+                <input placeholder="Pages" type="number" class="pages" id="book-pages">
+            </div>
+            <div class="ui toggle checkbox">
+                <input type="checkbox" name="book-status" value="Read" checked>
+                <label>Read/Not Read</label>
+            </div>
+            <button id="add-book" class="ui button secondary add">Add</button>
+            <button id="cancel-book" class="ui button add">Cancel</button>
+        </div>
+
+    </main>        
+
+    <script
+    src="https://code.jquery.com/jquery-3.1.1.min.js"
+    integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+    crossorigin="anonymous"></script>
+    <script src="js/semantic.min.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>
