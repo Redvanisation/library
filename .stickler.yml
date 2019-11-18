@@ -8,3 +8,4 @@ files:
   ignore:
       - 'dist/*'
       - 'js/semantic.min.js'
+      - '.eslintrc.js'
