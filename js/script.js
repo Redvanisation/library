@@ -39,10 +39,11 @@ function hideNewBook() {
 }
 
 function render(arr, elem) {
-  elem.innerHTML = '';
+  const element = elem;
+  element.innerHTML = '';
 
   arr.forEach((book) => {
-    elem.innerHTML += ` <tr> 
+    element.innerHTML += ` <tr> 
                           <td> 
                               <p class=" form-content">${book.name}</p>  
                           </td>
@@ -63,10 +64,12 @@ function render(arr, elem) {
 }
 
 function changeStatus(index, arr) {
-  if (arr[index].status === 'Read') {
-    arr[index].status = 'Not Read';
+  const ind = arr[index];
+
+  if (ind.status === 'Read') {
+    ind.status = 'Not Read';
   } else {
-    arr[index].status = 'Read';
+    ind.status = 'Read';
   }
   render(myLibrary, booksDiv);
 }
@@ -77,9 +80,9 @@ function removeBook(index, arr) {
 }
 
 function addBook() {
-  const name = document.querySelector('#book-name').value;
-  const author = document.querySelector('#book-author').value;
-  const pages = document.querySelector('#book-pages').value;
+  const name = document.querySelector('#book-name');
+  const author = document.querySelector('#book-author');
+  const pages = document.querySelector('#book-pages');
   const status = document.querySelector('input[name="book-status"]');
 
   if (status.checked) {
@@ -88,11 +91,16 @@ function addBook() {
     status.value = 'Not Read';
   }
 
-  if (!name || !author || !pages) {
+  if (!name.value || !author.value || !pages.value) {
     return customAlert('Please enter all book details');
   }
 
-  myLibrary.push(new Book(name, author, pages, status.value));
+  myLibrary.push(new Book(name.value, author.value, pages.value, status.value));
+
+  name.value = '';
+  author.value = '';
+  pages.value = '';
+
   render(myLibrary, booksDiv);
 
   return hideNewBook();
